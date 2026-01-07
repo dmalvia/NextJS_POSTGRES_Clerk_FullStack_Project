@@ -3,11 +3,12 @@
 import { SignedOut, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { SignedIn, UserButton } from "@clerk/clerk-react";
+import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
 import ThemeToggle from "./theme-toggle";
 import { Map, MessageSquare, Shield, Sparkle } from "lucide-react";
 
 export default function Navbar() {
+  const { user } = useUser();
   return (
     <nav className="border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -35,13 +36,15 @@ export default function Navbar() {
             Feedback
           </Link>
           {/* Simple: Just show Admin link to everyone */}
-          <Link
-            href="/admin"
-            className="text-sm hover:text-primary transition-colors flex items-center gap-1"
-          >
-            <Shield className="h-4 w-4" />
-            Admin
-          </Link>
+          <SignedIn>
+            <Link
+              href="/admin"
+              className="text-sm hover:text-primary transition-colors flex items-center gap-1"
+            >
+              <Shield className="h-4 w-4" />
+              Admin
+            </Link>
+          </SignedIn>
         </div>
         <div className="flex items-center gap-4">
           <ThemeToggle />
