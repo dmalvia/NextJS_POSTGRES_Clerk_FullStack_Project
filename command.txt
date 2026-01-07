@@ -1,0 +1,31 @@
+npx create-next-app@latest feedback
+project walkthrough
+install dependencies
+npm install @clerk/nextjs lucide-react
+npm install prisma @prisma/client @prisma/adapter-pg date-fns
+npm install shadcn@latest
+npx shadcn@latest init 
+select slate color
+npm install -D tsx dotenv
+
+Create schema and then prisma config then https://console.prisma.io/ and then lib prisma.ts
+# Run this in your terminal to generate your Prisma Client
+npx prisma generate
+create the seed script
+migrate the schema and sync with database
+npx prisma migrate dev --name init
+seed the database
+npx prisma db seed
+
+clerk
+proxy.ts & ENV
+
+components
+navbar
+npx shadcn@latest add button card input textarea badge avatar dropdown-menu sonner
+
+
+
+
+
+
