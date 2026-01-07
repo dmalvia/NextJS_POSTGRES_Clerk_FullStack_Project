@@ -14,7 +14,7 @@ import Link from "next/link";
 import { GradientHeader } from "@/components/gradient-header";
 import { getCategoryDesign } from "../data/category-data";
 import FeedbackList from "@/components/feedback-list";
-
+export const dynamic = "force-dynamic";
 export default async function FeedbackPage() {
   // Sync user on page load
   const { userId } = await auth();

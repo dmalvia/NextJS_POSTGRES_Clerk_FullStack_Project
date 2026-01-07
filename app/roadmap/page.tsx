@@ -12,6 +12,8 @@ import { STATUS_ORDER, STATUS_GROUPS } from "../data/status-data";
 import { Progress } from "@/components/ui/progress";
 import { GradientHeader } from "@/components/gradient-header";
 
+export const dynamic = "force-dynamic";
+
 function getStatusPercentage(posts: any[], status: string) {
   const total = posts.length;
   const count = posts.filter((p) => p.status === status).length;
