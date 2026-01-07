@@ -17,6 +17,8 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+export const dynamic = "force-dynamic";
+
 const CATEGORIES = ["Feature", "Improvement", "Bug", "Design", "Other"];
 
 // Server action function
