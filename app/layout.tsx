@@ -9,6 +9,7 @@ import Footer from "@/components/footer";
 import { syncCurrentUser } from "@/lib/sync-user";
 
 const inter = Inter({ subsets: ["latin"] });
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Feedback Fusion - Public Roadmap",
