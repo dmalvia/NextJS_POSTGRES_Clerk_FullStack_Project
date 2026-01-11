@@ -16,9 +16,8 @@ import { getCategoryDesign } from "../data/category-data";
 import FeedbackList from "@/components/feedback-list";
 export const dynamic = "force-dynamic";
 export default async function FeedbackPage() {
-  // Sync user on page load
+  // Get the user ID from Clerk auth
   const { userId } = await auth();
-
   const posts = await prisma.post.findMany({
     include: {
       author: true,

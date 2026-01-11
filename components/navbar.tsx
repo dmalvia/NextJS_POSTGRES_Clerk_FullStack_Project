@@ -3,12 +3,11 @@
 import { SignedOut, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
+import { SignedIn, UserButton } from "@clerk/clerk-react";
 import ThemeToggle from "./theme-toggle";
 import { Map, MessageSquare, Shield, Sparkle } from "lucide-react";
 
 export default function Navbar() {
-  const { user } = useUser();
   return (
     <nav className="border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -49,8 +48,12 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <SignedOut>
-            <SignInButton mode="modal">
-              <Button>Sign In</Button>
+            <SignInButton>
+              <Button asChild>
+                <Link href="/sign-in" scroll={true}>
+                  Sign In
+                </Link>
+              </Button>
             </SignInButton>
           </SignedOut>
           <SignedIn>

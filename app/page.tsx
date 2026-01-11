@@ -1,10 +1,11 @@
 import { GradientHeader } from "@/components/gradient-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { auth } from "@clerk/nextjs/server";
 import { ArrowRight, BarChart, MessageSquare, Users, Zap } from "lucide-react";
 import Link from "next/link";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
